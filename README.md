@@ -1,8 +1,8 @@
-= Paleisti testavimo įrankį =
+# Paleisti testavimo įrankį 
 
 Paprasčiausias būdas paleisti cmd failą skirta tam tikrai paslaugai: pvz 
 
-    run_patikra.cmd
+    paleisti_patikra.cmd
 
 Gauti rezultatai:
     
@@ -34,24 +34,24 @@ Paleidimo pavyzdžiai:
     bin\tool\wav_align.py --engine ieskotuvas --info "testas" --hmm liepa-20_corpus8_0_mg11.cd_semi_200 --jsgf liepa_ieskotuvas.gram --dict liepa_ieskotuvas.dic  --compare_function
 
 
-= Katalogai = 
+# Katalogai  
 
-\bin - paleidžiamieji failai
-\bin\tool - python parašyti įrankiai: 
-\bin\tool\phrase2function.py - frazė vertimas į funkciją
-\bin\tool\phrase_align.py - atpažinimo ir traskcripcijos palyginimas(perrašytas sphinx word_align.pl)
-\bin\tool\transcriber_re.py - mg1.3 trasckribatorius(be UI)
-\bin\tool\wav_align.py - pagrindinis įrankis kuris naudoja visus kitus aukščiau paminėtus
-\models\lm - Paslaugų JSGF gramatikos
-\models\hmm - Sphinx Akustinis modelis
-\models\dict - Paslaugų žodynai
-\target - direktorija laikiniems failams: logams, rezultatams ir t.t.
-\wav - testavimo garsynų direktorija
+	\bin - paleidžiamieji failai
+	\bin\tool - python parašyti įrankiai: 
+	\bin\tool\phrase2function.py - frazė vertimas į funkciją
+	\bin\tool\phrase_align.py - atpažinimo ir traskcripcijos palyginimas(perrašytas sphinx word_align.pl)
+	\bin\tool\transcriber_re.py - mg1.3 trasckribatorius(be UI)
+	\bin\tool\wav_align.py - pagrindinis įrankis kuris naudoja visus kitus aukščiau paminėtus
+	\models\lm - Paslaugų JSGF gramatikos
+	\models\hmm - Sphinx Akustinis modelis
+	\models\dict - Paslaugų žodynai
+	\target - direktorija laikiniems failams: logams, rezultatams ir t.t.
+	\wav - testavimo garsynų direktorija
 
-= Noriu testuoti kitus atvejus =
+# Noriu testuoti kitus atvejus 
 
  * Jei reikia pakeisti nustatymus kitus nei numatyta skripto parametrais, tuomet reikia keisti skripte esančią konstantą: wav_align.py POCKETSPHINX_CMD_TEMPLATE
- * Jei reikia pridėti daugiau akustinių modelių, tai įkelkite juos į katalogą: \models\hmm ir nusakykite skriptų jį naudoti parametru "--hmm mano_hmm". NB: Jei žodynas naudoją kitą fonemų aibę tuomet 
+ * Jei reikia pridėti daugiau akustinių modelių, tai įkelkite juos į katalogą: \models\hmm ir nusakykite skriptų jį naudoti parametru "--hmm mano_hmm". NB: Jei žodynas naudoją kitą fonemų aibę tuomet reikia naujo žodyno.
  * Jei reikia pridėti naują gramatiką esamoms paslaugom, tai įkelkite gramatiką į \models\lm ir nustatykite ją naudoti parametru --jsgf mano.gram. NB: Reikia užtikrinti kad visi gramatikos žodžiai yra žodyne.
  * Jei reikia naudoti naują žodyną esamoms paslaugom, tai įkelkite naują žodyną į \models\dict ir nustatykite jį naudoti parametru --dict mano.dict
 
